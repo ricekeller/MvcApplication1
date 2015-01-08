@@ -28,5 +28,15 @@ namespace MvcApplication1.Controllers
 			//GCMServerHelper.GetInstance().IsRegistrationIdValid("4455");
 			return GCMServerHelper.GetInstance().SendMessage("Test!!!","1234");
 		}
+
+		public string TestSA(string id)
+		{
+			return GCMServerHelper.GetInstance().SaveAPIKEY2File(id, Server).ToString();
+		}
+
+		public string TestLA()
+		{
+			return GCMServerHelper.GetInstance().LoadAPIKEYFromFile(Server).ToString();
+		}
     }
 }
