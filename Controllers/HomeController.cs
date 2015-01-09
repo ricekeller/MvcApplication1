@@ -36,7 +36,14 @@ namespace MvcApplication1.Controllers
 
 		public string TestLA()
 		{
-			return GCMServerHelper.GetInstance().LoadAPIKEYFromFile(Server).ToString();
+			 return GCMServerHelper.GetInstance().LoadAPIKEYFromFile(Server).ToString();
+		}
+
+		public string testen(string id)
+		{
+			string encrypted=Utils.EncryptString(id);
+			string decrypted=Utils.DecryptString(encrypted);
+			return string.Format("Original: {0}, encrypted: {1}, decrypted: {2}", id, encrypted, decrypted);
 		}
     }
 }
